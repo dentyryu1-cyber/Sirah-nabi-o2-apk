@@ -5,18 +5,19 @@
       <stop offset="50%" stop-color="#E5B454"/>
       <stop offset="100%" stop-color="#A67119"/>
     </linearGradient>
-    <radialGradient id="e" cx="50%" cy="46%" r="54%">
-      <stop offset="0%" stop-color="#19785D"/>
-      <stop offset="70%" stop-color="#0E4A3A"/>
-      <stop offset="100%" stop-color="#072B21"/>
+    <radialGradient id="navyBg" cx="50%" cy="46%" r="58%">
+      <stop offset="0%" stop-color="#19255A"/>
+      <stop offset="68%" stop-color="#0B1336"/>
+      <stop offset="100%" stop-color="#070D24"/>
     </radialGradient>
   </defs>
-  <circle cx="100" cy="100" r="96" fill="url(#e)" stroke="url(#g)" stroke-width="6"/>
-  <rect x="38" y="38" width="124" height="124" rx="6" fill="none" stroke="url(#g)" stroke-width="4.5"/>
-  <rect x="38" y="38" width="124" height="124" rx="6" transform="rotate(45 100 100)" fill="none" stroke="url(#g)" stroke-width="4.5"/>
-  <path d="M68 136 V96 C68 76 84 62 100 54 C116 62 132 76 132 96 V136" stroke="url(#g)" stroke-width="4" fill="none" stroke-linecap="round"/>
-  <path d="M105 64 C98 64 93 69 93 76 C93 83 98 88 105 88 C100 86 98 81 98 76 C98 71 100 66 105 64 Z" fill="url(#g)"/>
-  <path d="M60 112 L100 120 L140 112 L140 140 L100 147 L60 140 Z" fill="url(#g)"/>
-  <path d="M64 107 C77 106 90 110 99 117 V141 C90 135 77 133 64 134 Z" fill="#FFFDF9"/>
-  <path d="M136 107 C123 106 110 110 101 117 V141 C110 135 123 133 136 134 Z" fill="#F6E8C8"/>
+  <rect width="200" height="200" rx="44" fill="url(#navyBg)"/>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="url(#g)" stroke-width="3.5" opacity="0.65"/>
+  <rect x="44" y="44" width="112" height="112" rx="6" fill="none" stroke="url(#g)" stroke-width="4"/>
+  <rect x="44" y="44" width="112" height="112" rx="6" transform="rotate(45 100 100)" fill="none" stroke="url(#g)" stroke-width="4"/>
+  <path d="M70 132 V96 C70 78 85 65 100 58 C115 65 130 78 130 96 V132" stroke="url(#g)" stroke-width="3.6" fill="none" stroke-linecap="round"/>
+  <path d="M105 68 C98 68 93 73 93 80 C93 87 98 92 105 92 C100 90 98 85 98 80 C98 75 100 70 105 68 Z" fill="url(#g)"/>
+  <path d="M64 111 L100 118 L136 111 L136 136 L100 142 L64 136 Z" fill="url(#g)"/>
+  <path d="M68 107 C80 106 91 110 99 116 V137 C91 132 80 130 68 131 Z" fill="#FFFDF9"/>
+  <path d="M132 107 C120 106 109 110 101 116 V137 C109 132 120 130 132 131 Z" fill="#F6E8C8"/>
 </svg>

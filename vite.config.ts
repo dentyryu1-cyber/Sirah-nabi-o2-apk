@@ -69,7 +69,10 @@ if ('serviceWorker' in navigator) {
           'apple-touch-icon.png',
           'pwa-192x192.png',
           'pwa-512x512.png',
+          'pwa-maskable-192x192.png',
           'pwa-maskable-512x512.png',
+          'screenshot-mobile.png',
+          'screenshot-desktop.png',
         ],
         manifest: {
           id: base,
@@ -80,11 +83,15 @@ if ('serviceWorker' in navigator) {
           theme_color: '#070D24',
           background_color: '#070D24',
           display: 'standalone',
+          display_override: ['window-controls-overlay', 'standalone'],
           orientation: 'any',
           lang: 'id',
           dir: 'ltr',
           categories: ['education', 'books'],
           prefer_related_applications: false,
+          launch_handler: {
+            client_mode: 'focus-existing',
+          },
           start_url: base,
           scope: base,
           icons: [
@@ -101,15 +108,53 @@ if ('serviceWorker' in navigator) {
               purpose: 'any',
             },
             {
+              src: 'pwa-maskable-192x192.png',
+              sizes: '192x192',
+              type: 'image/png',
+              purpose: 'maskable',
+            },
+            {
               src: 'pwa-maskable-512x512.png',
               sizes: '512x512',
               type: 'image/png',
               purpose: 'maskable',
             },
           ],
+          screenshots: [
+            {
+              src: 'screenshot-mobile.png',
+              sizes: '540x960',
+              type: 'image/png',
+              form_factor: 'narrow',
+              label: 'Tampilan aplikasi Sirah Nabi di ponsel',
+            },
+            {
+              src: 'screenshot-desktop.png',
+              sizes: '1280x720',
+              type: 'image/png',
+              form_factor: 'wide',
+              label: 'Tampilan aplikasi Sirah Nabi di laptop dan desktop',
+            },
+          ],
+          shortcuts: [
+            {
+              name: 'Mulai Belajar Sirah',
+              short_name: 'Mulai',
+              description: 'Buka media pembelajaran interaktif Sirah Nabi',
+              url: base,
+              icons: [
+                {
+                  src: 'pwa-192x192.png',
+                  sizes: '192x192',
+                  type: 'image/png',
+                },
+              ],
+            },
+          ],
         },
         workbox: {
           globPatterns: ['**/*.{js,css,html,ico,png,jpg,svg,woff,woff2}'],
+          globIgnores: ['**/assets/aistudio/*.jpg', '**/assets/aistudio/*.png'],
           maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
           runtimeCaching: [
             {
