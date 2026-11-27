@@ -1,0 +1,6 @@
+{
+  "name": "Sirah Nabi — Media Pembelajaran Kelompok 3",
+  "description": "Media pembelajaran interaktif Sirah Nabawiyah tentang kelahiran dan masa kecil Nabi Muhammad SAW oleh Kelompok 3.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
