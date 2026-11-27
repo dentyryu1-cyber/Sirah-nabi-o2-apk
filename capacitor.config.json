@@ -1,0 +1,9 @@
+{
+  "appId": "id.kelompok3.sirahnabi",
+  "appName": "Sirah Nabi",
+  "webDir": "dist",
+  "android": {
+    "backgroundColor": "#070D24",
+    "allowMixedContent": true
+  }
+}

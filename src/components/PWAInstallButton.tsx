@@ -117,7 +117,7 @@ export function PWAInstallButton() {
                     </p>
                   </div>
                   <div className="rounded-xl border border-[#E5B454]/15 bg-[#0F183E] p-2.5 text-[11px] text-[#B9C2E3]">
-                    Butuh file installer <strong className="text-[#FCE6A6]">.apk</strong>? Deploy ke GitHub Pages lalu masukkan URL-nya ke <strong className="text-[#FCE6A6]">pwabuilder.com</strong> untuk membungkusnya menjadi APK Android.
+                    Ingin file <strong className="text-[#FCE6A6]">.apk</strong> mandiri tanpa bilah web? Unduh langsung dari tab <strong className="text-[#FCE6A6]">Releases</strong> atau <strong className="text-[#FCE6A6]">Actions → Sirah-Nabi-Android-APK</strong> di repositori GitHub Anda.
                   </div>
                 </>
               )}

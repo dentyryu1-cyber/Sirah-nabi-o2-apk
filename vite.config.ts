@@ -5,7 +5,8 @@ import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig(() => {
-  const base = process.env.VITE_BASE_PATH || '/';
+  const isCapacitor = process.env.CAPACITOR_BUILD === 'true';
+  const base = process.env.VITE_BASE_PATH || (isCapacitor ? './' : '/');
 
   const devSwCleanupPlugin = {
     name: 'dev-sw-cleanup',
@@ -63,6 +64,7 @@ if ('serviceWorker' in navigator) {
       tailwindcss(),
       devSwCleanupPlugin,
       VitePWA({
+        disable: isCapacitor,
         registerType: 'autoUpdate',
         includeAssets: [
           'favicon.svg',

@@ -9,6 +9,13 @@ import { SirahLogo } from './components/SirahLogo';
 export default function App() {
   const [showIntro, setShowIntro] = useState(true);
   const [introRunId, setIntroRunId] = useState(0);
+  const isNativeApp =
+    import.meta.env.VITE_CAPACITOR === 'true' ||
+    (typeof window !== 'undefined' &&
+      Boolean(
+        (window as unknown as { Capacitor?: { isNativePlatform?: () => boolean } })
+          .Capacitor?.isNativePlatform?.()
+      ));
 
   const handleCompleteIntro = useCallback(() => {
     setShowIntro(false);
@@ -47,7 +54,7 @@ export default function App() {
         </p>
 
         <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-          <PWAInstallButton />
+          {!isNativeApp && <PWAInstallButton />}
 
           <button
             type="button"
@@ -59,16 +66,18 @@ export default function App() {
             <span className="hidden sm:inline">Putar Intro</span>
           </button>
 
-          <a
-            href={`${import.meta.env.BASE_URL}sirah-nabi-kelompok-3.html`}
-            download="sirah-nabi-kelompok-3.html"
-            className="inline-flex min-h-[34px] shrink-0 items-center gap-1.5 rounded-lg bg-gradient-to-r from-[#E5B454] to-[#C88D2B] px-2.5 sm:px-3 py-1.5 text-xs font-bold text-[#140E02] shadow-[0_2px_10px_rgba(229,180,84,0.3)] transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FCE6A6] whitespace-nowrap"
-            title="Unduh versi HTML mandiri untuk dijalankan offline di HP atau Laptop"
-          >
-            <Download className="h-3.5 w-3.5" aria-hidden="true" />
-            <span className="sm:hidden">Unduh</span>
-            <span className="hidden sm:inline">Unduh HTML</span>
-          </a>
+          {!isNativeApp && (
+            <a
+              href={`${import.meta.env.BASE_URL}sirah-nabi-kelompok-3.html`}
+              download="sirah-nabi-kelompok-3.html"
+              className="inline-flex min-h-[34px] shrink-0 items-center gap-1.5 rounded-lg bg-gradient-to-r from-[#E5B454] to-[#C88D2B] px-2.5 sm:px-3 py-1.5 text-xs font-bold text-[#140E02] shadow-[0_2px_10px_rgba(229,180,84,0.3)] transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FCE6A6] whitespace-nowrap"
+              title="Unduh versi HTML mandiri untuk dijalankan offline di HP atau Laptop"
+            >
+              <Download className="h-3.5 w-3.5" aria-hidden="true" />
+              <span className="sm:hidden">Unduh</span>
+              <span className="hidden sm:inline">Unduh HTML</span>
+            </a>
+          )}
         </div>
       </header>
 

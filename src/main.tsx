@@ -33,7 +33,7 @@ if (import.meta.env.DEV) {
       })
       .catch(() => {});
   }
-} else {
+} else if (import.meta.env.VITE_CAPACITOR !== 'true') {
   if ('serviceWorker' in navigator) {
     const hadController = Boolean(navigator.serviceWorker.controller);
     let refreshing = false;
